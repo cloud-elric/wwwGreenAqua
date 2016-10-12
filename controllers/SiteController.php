@@ -10,6 +10,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntUsuarios;
 use yii\web\Response;
+use app\models\Utils;
+use yii\bootstrap\ActiveForm;
 
 class SiteController extends Controller {
 	/**
@@ -71,6 +73,11 @@ class SiteController extends Controller {
 		if ($usuario->load ( Yii::$app->request->post () )) {
 			$usuario->txt_token = Utils::generateToken ( 'usr_' );
 			Yii::$app->response->format = Response::FORMAT_JSON;
+			
+			if($validacion = $this->validarUsuario($usuario)){
+				return $validacion;
+			}
+			
 			if ($usuario->save ()) {
 				
 				return [ 
@@ -86,6 +93,18 @@ class SiteController extends Controller {
 		return $this->render ( 'index', [ 
 				'usuario' => $usuario 
 		] );
+	}
+	
+	public function validarUsuario($usuario) {
+		if (Yii::$app->request->isAjax && $usuario->load ( Yii::$app->request->post () )) {
+				
+			return  ActiveForm::validate ( $usuario );
+		}
+	}
+	
+	public function actionVerRegistros(){
+		
+		
 	}
 	
 	/**

@@ -31,8 +31,8 @@ class EntUsuarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular'], 'required'],
-            [['num_esferas'], 'integer'],
+            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','num_esferas'], 'required', 'message'=>'Campo requerido'],
+            [['num_esferas'], 'integer', 'message'=>'Debe ser un valor númerico'],
             [['fch_creacion'], 'safe'],
             [['txt_token'], 'string', 'max' => 60],
             [['txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular'], 'string', 'max' => 50],
@@ -48,10 +48,10 @@ class EntUsuarios extends \yii\db\ActiveRecord
         return [
             'id_usuario' => 'Id Usuario',
             'txt_token' => 'Txt Token',
-            'txt_nombre' => 'Txt Nombre',
-            'txt_apellido_paterno' => 'Txt Apellido Paterno',
-            'tel_numero_celular' => 'Tel Numero Celular',
-            'num_esferas' => 'Num Esferas',
+            'txt_nombre' => 'Nombre',
+            'txt_apellido_paterno' => 'Apellido Paterno',
+            'tel_numero_celular' => 'Número Celular',
+            'num_esferas' => 'Número Esferas',
             'fch_creacion' => 'Fch Creacion',
         ];
     }

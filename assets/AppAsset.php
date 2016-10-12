@@ -24,6 +24,7 @@ class AppAsset extends AssetBundle
 			
 			'plugins/ladda-bootstrap/dist/spin.min.js',
 			'plugins/ladda-bootstrap/dist/ladda.min.js',
+			'js/site.js'
 	]
 	;
 	public $depends = [
