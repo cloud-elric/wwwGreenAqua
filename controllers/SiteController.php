@@ -104,9 +104,78 @@ class SiteController extends Controller {
 	
 	public function actionVerRegistros(){
 		
+		$query = EntUsuarios::find ();
+		// Carga el dataprovider
+		$dataProvider = new ActiveDataProvider ( [
+				'query' => $query,
+				'sort' => [
+						'defaultOrder' => ['fch_creacion'=>SORT_DESC],
+				],
+				'pagination' => [
+						'pageSize' => 30,
+						'page' => 0
+				]
+		] );
+		
+		
+		return $this->render ( 'usuarios', [
+				'dataProvider' => $dataProvider
+		] );
+	}
+	
+	/**
+	 * Descarga todos los registros de usuarios
+	 */
+	public function actionDescargarRegistros(){
+		
+		$registros = EntUsuarios::find()->all();
+		$array = [];
+		$i = 0;
+		foreach($registros as $registro){
+			$array[$i]['Nombre'] = $registro->txt_nombre;
+			$array[$i]['Apellido'] = $registro->txt_apellido_paterno;
+			$array[$i]['num_esferas']= $registro->num_esferas;
+			$i++;
+		}
+		
+		
+		$this->downloadSendHeaders('registros.csv');
+		
+		$this->array2CSV($array);
+		
+		exit;
+	}
+	
+	private function array2CSV($array){
+		if (count($array) == 0) {
+			return null;
+		}
+		
+		$df = fopen("php://output", 'w');
+		fputcsv($df, ['Nombre', 'Apellido paterno', 'Esferas']);
+		foreach ($array as $row) {
+			fputcsv($df, $row);
+		}
+		fclose($df);
 		
 	}
 	
+	private function downloadSendHeaders($filename) {
+		// disable caching
+		$now = gmdate("D, d M Y H:i:s");
+		//header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+		header("Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate");
+		header("Last-Modified: {$now} GMT");
+	
+		// force download
+		header("Content-Type: application/force-download");
+		header("Content-Type: application/octet-stream");
+		header("Content-Type: application/download");
+	
+		// disposition / encoding on response body
+		header("Content-Disposition: attachment;filename={$filename}");
+		header("Content-Transfer-Encoding: binary");
+	}
 	/**
 	 * Login action.
 	 *
