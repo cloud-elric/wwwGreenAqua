@@ -20,11 +20,11 @@ $this->title = 'Registrarse';
 		
 				<?= $form->field($usuario, 'tel_numero_celular') -> label(false) -> textInput(["placeholder" => "Número celular"])?>
 			
-				<?= $form->field($usuario, 'txt_email') -> label(false) -> textInput(["placeholder" => "E-mail"])?>
+				<?= $form->field($usuario, 'num_esferas') -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
 			
 				<?= Html::submitButton('Continuar', ['class' => 'btn btn-primary', 'name' => 'contact-button'])?>
 			
-				<?=$form->field ( $usuario, 'aceptaTerminos',['template'=>'{error}{input}'])->label ( false )->checkbox (['class'=>'checkbox'], false)?>
+				
 
 	<?php ActiveForm::end(); ?>
 	
