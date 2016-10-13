@@ -63,10 +63,9 @@ AppAsset::register($this);
                                 <p>Registro Exitoso</p>
                             </div>
                             <!-- end - .aqua-body-succes-cont -->
+                            
                             <!-- .aqua-body-succes-btn -->
-                            <button class="btn btn-primary aqua-body-succes-btn js-btn-continuar">
-                                Continuar
-                            </button>
+                            <button class="btn btn-primary aqua-body-succes-btn js-btn-continuar ladda-button" data-style="zoom-out"><span class="ladda-label">Continuar</span></button>
                             <!-- end - .aqua-body-succes-btn -->
                         </div>
                         <!-- end - .aqua-body-succes -->
