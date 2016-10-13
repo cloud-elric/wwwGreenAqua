@@ -340,6 +340,7 @@ hr {
 
 .aqua .aqua-cont .flip-panel {
   height: 100%;
+  overflow: hidden;
   position: relative;
   width: 100%;
   z-index: 19;
@@ -348,7 +349,7 @@ hr {
 .aqua .aqua-cont .flip-panel .front-side,
 .aqua .aqua-cont .flip-panel .back-side {
   bottom: 0;
-  height: auto;
+  height: 100%;
   left: 0;
   position: absolute;
   right: 0;
@@ -523,6 +524,8 @@ hr {
 }
 
 .aqua.aqua-registros .aqua-cont .aqua-registros-body {
+  height: 100%;
+  overflow-x: auto;
   padding: 10px 0 92px;
 }
 

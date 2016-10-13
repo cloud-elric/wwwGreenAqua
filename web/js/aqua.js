@@ -55,7 +55,7 @@ $(document).ready(function(){
 		$(".aqua-body-succes").fadeOut( 200 );
 		$(".aqua-body").fadeIn( 300 );
 	});
-
+	
 	// Click - Exportar
 	$(".js-btn-exportar").on("click", function(){
 
