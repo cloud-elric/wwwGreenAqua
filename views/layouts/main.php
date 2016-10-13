@@ -73,7 +73,7 @@ AppAsset::register($this);
                     </div>
                     <!-- end - .front-side -->
                     
-                    <!-- .back-side  -->
+                    <!-- .back-side -->
                     <div class="back-side">
                         <!-- .aqua-registros-body -->
                         <div class="aqua-registros-body">
