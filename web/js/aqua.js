@@ -45,7 +45,7 @@ $(document).ready(function(){
 	// Click - Mostrar Registro Exitoso
 	$(".btn.btn-primary").on("click", function(){
 		$(".aqua-body").fadeOut( 100 ).hide();
-		$(".aqua-body").delay( 300 ).fadeIn( 200 ).css("opacity", 0);
+		$(".aqua-body").delay( 300 ).css("opacity", 0);
 		$(".aqua-body-succes").css("display", "flex");
 
 		$(".aqua-body").delay(200).css("opacity", 1);
