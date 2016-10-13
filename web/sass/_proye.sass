@@ -1,0 +1,206 @@
+/*!
+	-----------------------------------------------------------------------------
+
+	3.0 - Aquq
+			# Extra
+
+	-----------------------------------------------------------------------------
+	*/
+
+.aqua
+	align-items: center
+	background-image: url(../images/playa.png)
+	background-position: 50%
+	background-repeat: no-repeat
+	background-size: cover
+	display: flex
+	height: 100vh
+	justify-content: center
+	overflow: hidden
+	position: relative
+	width: 100%
+	.aqua-cont
+		background-color: $white
+		box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.24)
+		+border-radius(4px)
+		height: 490px
+		margin: 0 auto
+		max-height: 90vh
+		max-width: 326px
+		overflow: hidden
+		padding: 23px 30px
+		position: relative
+		width: 90%
+		+transition(height 0.2s ease-in)
+		.aqua-header
+			text-align: center
+			img
+				height: 87px
+				+respond-to(xs)
+					height: auto
+					width: 100%
+		
+		// .aqua-registros-body
+		// 	display: none
+		// Close
+		.aqua-registros-close
+			align-items: center
+			background-color: $purple
+			+border-radius(50%)
+			color: $white
+			cursor: pointer
+			display: flex
+			height: 25px
+			justify-content: center
+			opacity: 0.4
+			position: absolute
+			right: 17px
+			top: -60px
+			width: 25px
+			+transition(opacity 0.3s ease-in)
+			+transition(top 0.3s ease-in)
+			&.aqua-registros-close-anim
+				opacity: 1
+				top: 14px
+		// Flip
+		.flip-panel
+			height: 100%
+			position: relative
+			width: 100%
+			z-index: 19
+			.front-side,
+			.back-side
+				bottom: 0
+				height: auto
+				left: 0
+				position: absolute
+				right: 0
+				top: 0
+				width: 100%
+			.front-side,
+			.back-side 
+				-webkit-backface-visibility: hidden
+				backface-visibility: hidden
+				-webkit-transition: -webkit-transform 0.4s
+				transition: transform 0.4s
+				-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+				transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+			.front-side
+				background-color: transparent
+				.aqua-body
+					padding: 34px 0 30px
+					// +transition(opacity 0.3s ease-in)
+					form
+						.has-error
+							input[type="text"]
+								border: 1px solid $error
+						input[type="text"]
+							border-radius: 3px
+							border: 1px solid $purple
+							font-size: 1.105em
+							height: 46px
+							margin-top: 14px
+							padding: 0 23px
+							width: 100%
+							&:focus
+								border-color: #76aec1
+								outline: none
+							+placeholder
+								color: $aqua
+						.help-block.help-block-error
+							display: none
+							color: #E74C3C
+							padding: 2px 23px
+						.btn
+							margin-top: 14px
+							padding: 12px 1rem
+							width: 100%
+				// Success
+				.aqua-body-succes
+					align-items: center
+					display: none
+					flex-direction: column
+					height: 364px
+					justify-content: space-around
+					padding: 34px 0 30px
+					// +transition(opacity 0.3s ease-in)
+					.aqua-body-succes-cont
+						align-items: center
+						display: flex
+						flex-direction: column
+						justify-content: center
+						.aqua-body-succes-cont-icon
+							align-items: center
+							background-color: $purple
+							+border-radius(50%)
+							color: $white
+							display: flex
+							height: 55px
+							justify-content: center
+							width: 55px
+							i
+								font-size: 2.6em
+						p
+							color: $purple
+							font-size: 1.3em
+							margin-top: 35px
+					.aqua-body-succes-btn
+						margin-bottom: -24px
+						padding: 12px 1rem
+						width: 100%
+			.back-side 
+				background-color: $white
+				// overflow: auto
+				-webkit-transform: rotateY(-180deg)
+				transform: rotateY(-180deg)
+			// click effect
+			&.flipped
+				.front-side 
+					-webkit-transform: rotateY(-180deg)
+					transform: rotateY(-180deg)
+				.back-side  
+					-webkit-transform: rotateY(0)
+					transform: rotateY(0)
+	// Ver resgistros
+	.aqua-ver-resgistros
+		bottom: 120px
+		color: $white
+		cursor: pointer
+		font-size: .85em
+		position: absolute
+		right: 40px
+		z-index: 6
+	// Exportar
+	.aqua-exportar
+		background-color: $green
+		bottom: 111px
+		color: $white
+		opacity: 0.4
+		padding: 8px 2rem
+		position: absolute
+		right: -140px
+		z-index: 7
+		+transition(opacity 0.2s ease-in)
+		+transition(right 0.2s ease-in)
+		&.aqua-exportar-view
+			opacity: 1
+			right: 18px
+	// Registros
+	&.aqua-registros
+		// background-color: red
+		.aqua-cont
+			height: 90vh
+			padding: 23px 0 0
+			.aqua-registros-body
+				padding: 10px 0 92px
+				.aqua-registros-item
+					align-items: center
+					background-color: $white
+					display: flex
+					height: 46px
+					justify-content: space-between
+					padding: 0 30px
+					&:nth-child(even)
+						background-color: rgba($purple,.1)
+
+		
