@@ -40,6 +40,11 @@ $('body').on(
 						
 						
 						$('#js-contenedor-registros').append(item);
+
+						$(".aqua-body-succes .animated").animate({ "opacity": "0" }, 300, function() {
+							$(".aqua-body-succes").show();
+							$(".aqua-body-succes .animated").each(function(index) {$( this ).addClass("delay-"+(index)+" fadeInUp");});
+						});
 						
 					} else {
 						
