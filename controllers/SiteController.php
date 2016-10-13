@@ -70,6 +70,8 @@ class SiteController extends Controller {
 	public function actionIndex() {
 		$usuario = new EntUsuarios ();
 		
+		$registrados = EntUsuarios::find()->all();
+		
 		if ($usuario->load ( Yii::$app->request->post () )) {
 			$usuario->txt_token = Utils::generateToken ( 'usr_' );
 			Yii::$app->response->format = Response::FORMAT_JSON;
@@ -91,7 +93,8 @@ class SiteController extends Controller {
 		}
 		
 		return $this->render ( 'index', [ 
-				'usuario' => $usuario 
+				'usuario' => $usuario,
+				'registrados'=>$registrados
 		] );
 	}
 	

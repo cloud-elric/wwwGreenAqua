@@ -61,10 +61,13 @@ $(document).ready(function(){
 
 		var l = Ladda.create(this);
 	 	l.start();
-	 	
 	 	window.location='site/descargar-registros';
+	 	setTimeout(function(){
+	 		l.stop();
+	 	}, 2000)
 	 	
-	 	l.stop();
+	 	
+	 	//l.stop();
 	 	
 	});
 });

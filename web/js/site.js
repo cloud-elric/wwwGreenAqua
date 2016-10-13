@@ -28,7 +28,18 @@ $('body').on(
 						$(".aqua-body-succes").fadeIn( 300 );
 						$(".aqua-body-succes").css("display", "flex");
 
+						var nombre = $("#entusuarios-txt_nombre").val()+" "+$("#entusuarios-txt_apellido_paterno").val();
+						var numEsferas = $("#entusuarios-num_esferas").val();
+						
+						var item = '<div class="aqua-registros-item">'+
+										'<p>'+nombre+'</p>'+
+										'<p>'+numEsferas+'</p>'+
+								'</div>';
+					
 						document.getElementById("registro-form").reset();
+						
+						
+						$('#js-contenedor-registros').append(item);
 						
 					} else {
 						
