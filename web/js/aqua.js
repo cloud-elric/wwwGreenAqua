@@ -36,15 +36,15 @@ $(document).ready(function(){
 	});
 
 	// Click - Mostrar Registro Exitoso
-	$(".js-btn-registrar").on("click", function(){
-
-		var l = Ladda.create(this);
-	 	l.start();
-
-		$(".aqua-body").fadeOut( 200 );
-		$(".aqua-body-succes").fadeIn( 300 );
-		$(".aqua-body-succes").css("display", "flex");
-	});
+//	$(".js-btn-registrar").on("click", function(){
+//
+//		var l = Ladda.create(this);
+//	 	l.start();
+//
+//		$(".aqua-body").fadeOut( 200 );
+//		$(".aqua-body-succes").fadeIn( 300 );
+//		$(".aqua-body-succes").css("display", "flex");
+//	});
 
 	// Click - Ocultar Registro Exitoso
 	$(".js-btn-continuar").on("click", function(){
@@ -61,6 +61,13 @@ $(document).ready(function(){
 
 		var l = Ladda.create(this);
 	 	l.start();
+	 	window.location='site/descargar-registros';
+	 	setTimeout(function(){
+	 		l.stop();
+	 	}, 2000)
+	 	
+	 	
+	 	//l.stop();
 	 	
 	});
 });

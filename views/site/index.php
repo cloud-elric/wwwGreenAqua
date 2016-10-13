@@ -12,7 +12,11 @@ $this->title = 'Registrarse';
 
 ?>
 
-	<?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
+<!-- .front-side -->
+<div class="front-side">
+	<!-- .aqua-body -->
+	<div class="aqua-body">
+                           <?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
 	
 				<?= $form->field($usuario, 'txt_nombre')->textInput(['autofocus' => true]) -> label(false) -> textInput(["placeholder" => "Nombre"])?>
 		
@@ -22,9 +26,58 @@ $this->title = 'Registrarse';
 			
 				<?= $form->field($usuario, 'num_esferas') -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
 			
-				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['class' => 'btn btn-primary js-btn-registrar ladda-button', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
+				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
 				
 
 	<?php ActiveForm::end(); ?>
-	
+                        </div>
+	<!-- end - .aqua-body -->
+
+	<!-- .aqua-body-succes -->
+	<div class="aqua-body-succes">
+		<!-- .aqua-body-succes-cont -->
+		<div class="aqua-body-succes-cont">
+			<!-- .aqua-body-succes-cont -->
+			<div class="aqua-body-succes-cont-icon">
+				<i class="ion ion-checkmark"></i>
+			</div>
+			<!-- end - .aqua-body-succes-cont -->
+			<p>Registro Exitoso</p>
+		</div>
+		<!-- end - .aqua-body-succes-cont -->
+
+		<!-- .aqua-body-succes-btn -->
+		<button
+			class="btn btn-primary aqua-body-succes-btn js-btn-continuar ladda-button"
+			data-style="zoom-out">
+			<span class="ladda-label">Continuar</span>
+		</button>
+		<!-- end - .aqua-body-succes-btn -->
+	</div>
+	<!-- end - .aqua-body-succes -->
+</div>
+<!-- end - .front-side -->
+
+<!-- .back-side -->
+<div class="back-side">
+	<!-- .aqua-registros-body -->
+	<div class="aqua-registros-body" id="js-contenedor-registros">
+                            
+							<?php
+							foreach ( $registrados as $registrado ) {
+								?>
+                            <!-- .aqua-registros-item -->
+		<div class="aqua-registros-item">
+			<p><?=$registrado->txt_nombre.' '.$registrado->txt_apellido_paterno?></p>
+			<p><?=$registrado->num_esferas?></p>
+		</div>
+		<!-- end - .aqua-registros-item -->
+                            <?php
+							}
+							?>
+                        </div>
+	<!-- end - .aqua-registros-body -->
+</div>
+</div>
+<!-- end - .flip-panel -->
