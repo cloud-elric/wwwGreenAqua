@@ -7,6 +7,12 @@ $('body').on(
 			if (form.find('.has-error').length) {
 				return false;
 			}
+			
+			var button = document.getElementById('js-submit-form');
+			var l = Ladda.create(button);
+		 	l.start();
+			
+			
 			// submit form
 			$.ajax({
 				url : form.attr('action'),// url para peticion
@@ -18,13 +24,20 @@ $('body').on(
 					if (response.hasOwnProperty('status')
 							&& response.status == 'success') {
 						
-						
+						$(".aqua-body").fadeOut( 200 );
+						$(".aqua-body-succes").fadeIn( 300 );
+						$(".aqua-body-succes").css("display", "flex");
+
+						document.getElementById("registro-form").reset();
 						
 					} else {
+						
 						// Muestra los errores
 						$('#registro-form').yiiActiveForm('updateMessages',
 								response, true);
 					}
+					
+					l.stop();
 				},
 				statusCode: {
 				    404: function() {

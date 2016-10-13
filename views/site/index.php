@@ -22,7 +22,7 @@ $this->title = 'Registrarse';
 			
 				<?= $form->field($usuario, 'num_esferas') -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
 			
-				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['class' => 'btn btn-primary js-btn-registrar ladda-button', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
+				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
 				
 
