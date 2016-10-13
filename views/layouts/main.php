@@ -182,7 +182,7 @@ AppAsset::register($this);
             <!-- .aqua-ver-resgistros -->
             <span href="" class="aqua-ver-resgistros js-ver-resgistros">Ver registros</span>
             <!-- .aqua-exportar -->
-            <button class="btn aqua-exportar">Exportar</button>
+            <button class="btn aqua-exportar js-btn-exportar ladda-button" data-style="zoom-out"><span class="ladda-label">Exportar</span></button>
 
         </div>
         <!-- end - .aqua -->
