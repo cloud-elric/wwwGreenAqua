@@ -80,9 +80,14 @@ $('#registro-form').on(
 		function(e) {
 
 			if ($('#registro-form').find('.has-error').length) {
+				
+				$("#message-error").addClass("aqua-body-error");
+				
 				$("#message-error").text(
 						$('.has-error:eq(0) .help-block-error').text());
 				return false;
+			}else{
+				$("#message-error").removeClass("aqua-body-error");
 			}
 
 		});
