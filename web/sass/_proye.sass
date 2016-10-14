@@ -36,9 +36,9 @@
 			text-align: center
 			img
 				height: 87px
-				+respond-to(xs)
-					height: auto
-					width: 100%
+				// +respond-to(xs)
+				// 	height: auto
+				// 	width: 100%
 		
 		// .aqua-registros-body
 		// 	display: none
@@ -96,7 +96,7 @@
 							input[type="text"]
 								border: 1px solid $error
 						input[type="text"]
-							border-radius: 3px
+							+border-radius(3px)
 							border: 1px solid $purple
 							font-size: 1.105em
 							height: 46px
@@ -135,7 +135,15 @@
 							margin-top: 14px
 							padding: 12px 1rem
 							width: 100%
-
+						.aqua-body-error
+							align-items: center
+							background-color: #FF4136
+							+border-radius(3px)
+							color: $white
+							display: flex
+							justify-content: center
+							margin-top: 8px
+							padding: 3px 8px
 				// Success
 				.aqua-body-succes
 					align-items: center
