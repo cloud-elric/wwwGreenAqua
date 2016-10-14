@@ -16,17 +16,17 @@ $this->title = 'Registrarse';
 <div class="front-side">
 	<!-- .aqua-body -->
 	<div class="aqua-body">
-                 <?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
+            <?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
+
+			<?= $form->field($usuario, 'txt_nombre',['options'=>['class'=>'animated']])->textInput(['autofocus' => true]) -> label(false) -> textInput(["placeholder" => "Nombre"])?>
 	
-				<?= $form->field($usuario, 'txt_nombre',['options'=>['class'=>'animated']])->textInput(['autofocus' => true]) -> label(false) -> textInput(["placeholder" => "Nombre"])?>
+			<?= $form->field($usuario, 'txt_apellido_paterno',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Apellido paterno", "class"=>"input-short animateds"])?>
+	
+			<?= $form->field($usuario, 'tel_numero_celular',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número celular"])?>
 		
-				<?= $form->field($usuario, 'txt_apellido_paterno',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Apellido paterno", "class"=>"input-short animateds"])?>
+			<?= $form->field($usuario, 'num_esferas',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
 		
-				<?= $form->field($usuario, 'tel_numero_celular',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número celular"])?>
-			
-				<?= $form->field($usuario, 'num_esferas',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
-			
-				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button animated', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
+			<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button animated', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
 			<p id="message-error"></p>
 				

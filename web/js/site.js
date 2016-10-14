@@ -40,7 +40,7 @@ $('body').on(
 						document.getElementById("registro-form").reset();
 
 						$('#js-contenedor-registros').append(item);
-
+						$(".aqua-body-succes-btn").css("opacity","0");
 						$(".aqua-body-succes .animated").animate(
 								{
 									"opacity" : "0"
