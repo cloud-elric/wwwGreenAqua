@@ -88,6 +88,7 @@ $('#registro-form').on(
 				return false;
 			}else{
 				$("#message-error").removeClass("aqua-body-error");
+				$("#message-error").text("");
 			}
 
 		});

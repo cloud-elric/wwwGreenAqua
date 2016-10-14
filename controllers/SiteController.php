@@ -70,7 +70,7 @@ class SiteController extends Controller {
 	public function actionIndex() {
 		$usuario = new EntUsuarios ();
 		
-		$registrados = EntUsuarios::find()->all();
+		$registrados = EntUsuarios::find()->orderBy ( 'num_esferas desc' )->all();
 		
 		if ($usuario->load ( Yii::$app->request->post () )) {
 			$usuario->txt_token = Utils::generateToken ( 'usr_' );

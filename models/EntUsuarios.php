@@ -31,8 +31,10 @@ class EntUsuarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','num_esferas'], 'required', 'message'=>'Campo requerido'],
+            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','num_esferas'], 'required', 'message'=>'Campos requeridos'],
             [['num_esferas'], 'integer', 'message'=>'Debe ser un valor númerico'],
+        	[['tel_numero_celular'], 'string', 'max' => 10, 'message'=>'Maximo 10 digitos'],
+        	[['tel_numero_celular'], 'string', 'min' => 10, 'message'=>'Mínimo 10 digitos'],
             [['fch_creacion'], 'safe'],
             [['txt_token'], 'string', 'max' => 60],
             [['txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular'], 'string', 'max' => 50],
