@@ -28,7 +28,7 @@ $this->title = 'Registrarse';
 			
 				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button animated', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
-			<p id="message-error"></p>
+			<p class="aqua-body-error" id="message-error"></p>
 				
 
 	<?php ActiveForm::end(); ?>

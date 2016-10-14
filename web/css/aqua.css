@@ -403,6 +403,9 @@ hr {
 }
 
 .aqua .aqua-cont .flip-panel .front-side .aqua-body form input[type="text"] {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #5D67A8;
   font-size: 1.105em;
@@ -473,6 +476,20 @@ hr {
   margin-top: 14px;
   padding: 12px 1rem;
   width: 100%;
+}
+
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .aqua-body-error {
+  align-items: center;
+  background-color: #FF4136;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 3px 8px;
 }
 
 .aqua .aqua-cont .flip-panel .front-side .aqua-body-succes {
