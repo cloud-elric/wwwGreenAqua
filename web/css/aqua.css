@@ -329,13 +329,6 @@ hr {
   height: 87px;
 }
 
-@media screen and (max-width: 768px) {
-  .aqua .aqua-cont .aqua-header img {
-    height: auto;
-    width: 100%;
-  }
-}
-
 .aqua .aqua-cont .aqua-registros-close {
   align-items: center;
   background-color: #5D67A8;
