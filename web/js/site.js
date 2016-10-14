@@ -59,3 +59,9 @@ $('body').on(
 			});
 			return false;
 		});
+
+
+$('#registro-form').on('afterValidate', function (e) {
+	alert();
+    return false;
+});

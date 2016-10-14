@@ -16,7 +16,7 @@ $this->title = 'Registrarse';
 <div class="front-side">
 	<!-- .aqua-body -->
 	<div class="aqua-body">
-                           <?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
+                 <?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
 	
 				<?= $form->field($usuario, 'txt_nombre')->textInput(['autofocus' => true]) -> label(false) -> textInput(["placeholder" => "Nombre"])?>
 		
@@ -28,6 +28,7 @@ $this->title = 'Registrarse';
 			
 				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
+			<p id="message-error"></p>
 				
 
 	<?php ActiveForm::end(); ?>
