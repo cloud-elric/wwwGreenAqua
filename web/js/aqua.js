@@ -50,10 +50,16 @@ $(document).ready(function(){
 	$(".js-btn-continuar").on("click", function(){
 
 		var l = Ladda.create(this);
-	 	l.start();
-	 	
-		$(".aqua-body-succes").fadeOut( 200 );
-		$(".aqua-body").fadeIn( 300 );
+		l.start();
+
+	 	$(".aqua-body-succes").fadeOut( 200 );
+
+		$(".aqua-body .animated").animate({ "opacity": "0" }, 300, function() {
+			$(".aqua-body").show();
+			$(".aqua-body .animated").each(function(index) {$( this ).addClass("delay-"+(index)+" fadeInUp");});
+		});
+		// $(".aqua-body").fadeIn( 300 );
+		l.stop();
 	});
 	
 	// Click - Exportar
@@ -75,6 +81,12 @@ $(document).ready(function(){
 $(window).load(function(){
 	$(".loader").fadeOut();
 	$(".aqua").delay(3000).fadeIn();
+
+	$(".aqua-body").hide();
+	$(".aqua-body .animated").animate({ "opacity": "0" }, 300, function() {
+		$(".aqua-body").show();
+		$(".aqua-body .animated").each(function(index) {$( this ).addClass("delay-"+(index)+" fadeInUp");});
+	});
 });
 
 /**

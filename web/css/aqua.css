@@ -248,6 +248,36 @@ hr {
   background-image: none;
 }
 
+.delay-0 {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+.delay-1 {
+  -webkit-animation-delay: 0.35s;
+  animation-delay: 0.35s;
+}
+
+.delay-2 {
+  -webkit-animation-delay: 0.55s;
+  animation-delay: 0.55s;
+}
+
+.delay-3 {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+
+.delay-4 {
+  -webkit-animation-delay: 0.95s;
+  animation-delay: 0.95s;
+}
+
+.delay-5 {
+  -webkit-animation-delay: 1.15s;
+  animation-delay: 1.15s;
+}
+
 /*!
 	-----------------------------------------------------------------------------
 
@@ -410,6 +440,36 @@ hr {
   color: #CECEE4;
 }
 
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .delay-0 {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .delay-1 {
+  -webkit-animation-delay: 0.35s;
+  animation-delay: 0.35s;
+}
+
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .delay-2 {
+  -webkit-animation-delay: 0.55s;
+  animation-delay: 0.55s;
+}
+
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .delay-3 {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .delay-4 {
+  -webkit-animation-delay: 0.95s;
+  animation-delay: 0.95s;
+}
+
+.aqua .aqua-cont .flip-panel .front-side .aqua-body form .delay-5 {
+  -webkit-animation-delay: 1.15s;
+  animation-delay: 1.15s;
+}
+
 .aqua .aqua-cont .flip-panel .front-side .aqua-body form .help-block.help-block-error {
   display: none;
   color: #E74C3C;
@@ -485,7 +545,7 @@ hr {
 }
 
 .aqua .aqua-ver-resgistros {
-  bottom: 120px;
+  bottom: 35px;
   color: #FFF;
   cursor: pointer;
   font-size: .85em;
@@ -496,7 +556,7 @@ hr {
 
 .aqua .aqua-exportar {
   background-color: #7BDA5A;
-  bottom: 111px;
+  bottom: 26px;
   color: #FFF;
   opacity: 0.4;
   padding: 8px 2rem;

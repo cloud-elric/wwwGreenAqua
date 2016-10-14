@@ -18,15 +18,15 @@ $this->title = 'Registrarse';
 	<div class="aqua-body">
                  <?php $form = ActiveForm::begin(['id' => 'registro-form', 'options' => ['class' => 'form-login']]); ?>
 	
-				<?= $form->field($usuario, 'txt_nombre')->textInput(['autofocus' => true]) -> label(false) -> textInput(["placeholder" => "Nombre"])?>
+				<?= $form->field($usuario, 'txt_nombre',['options'=>['class'=>'animated']])->textInput(['autofocus' => true]) -> label(false) -> textInput(["placeholder" => "Nombre"])?>
 		
-				<?= $form->field($usuario, 'txt_apellido_paterno') -> label(false) -> textInput(["placeholder" => "Apellido paterno", "class"=>"input-short"])?>
+				<?= $form->field($usuario, 'txt_apellido_paterno',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Apellido paterno", "class"=>"input-short animateds"])?>
 		
-				<?= $form->field($usuario, 'tel_numero_celular') -> label(false) -> textInput(["placeholder" => "Número celular"])?>
+				<?= $form->field($usuario, 'tel_numero_celular',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número celular"])?>
 			
-				<?= $form->field($usuario, 'num_esferas') -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
+				<?= $form->field($usuario, 'num_esferas',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
 			
-				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
+				<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button animated', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
 			<p id="message-error"></p>
 				
@@ -40,18 +40,16 @@ $this->title = 'Registrarse';
 		<!-- .aqua-body-succes-cont -->
 		<div class="aqua-body-succes-cont">
 			<!-- .aqua-body-succes-cont -->
-			<div class="aqua-body-succes-cont-icon">
+			<div class="aqua-body-succes-cont-icon animated">
 				<i class="ion ion-checkmark"></i>
 			</div>
 			<!-- end - .aqua-body-succes-cont -->
-			<p>Registro Exitoso</p>
+			<p class="animated">Registro Exitoso</p>
 		</div>
 		<!-- end - .aqua-body-succes-cont -->
 
 		<!-- .aqua-body-succes-btn -->
-		<button
-			class="btn btn-primary aqua-body-succes-btn js-btn-continuar ladda-button"
-			data-style="zoom-out">
+		<button class="btn btn-primary aqua-body-succes-btn js-btn-continuar ladda-button animated" data-style="zoom-out">
 			<span class="ladda-label">Continuar</span>
 		</button>
 		<!-- end - .aqua-body-succes-btn -->

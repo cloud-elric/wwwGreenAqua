@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
 			'plugins/ladda-bootstrap/dist/ladda-themeless.min.css',
 			'css/flexboxgrid.min.css',
 			'css/ionicons.min.css',
+			'css/animate.css',
 			'css/aqua.css',
 	];
 	public $js = [
