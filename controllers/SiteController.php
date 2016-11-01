@@ -246,6 +246,8 @@ class SiteController extends Controller {
 	 * Visualiza todos los registros de la base de datos
 	 */
 	public function actionRegistros434df3386kdAqua65fr457Usuarios() {
+		$this->layout = 'mainUsuariosRegistrados';
+
 		$registrados = EntUsuarios::find ()->orderBy ( 'num_esferas desc' )->all ();
 		
 		return $this->render ( 'usuariosRegistrados', [ 

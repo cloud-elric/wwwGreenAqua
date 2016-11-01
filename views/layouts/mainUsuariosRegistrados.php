@@ -30,7 +30,7 @@ AppAsset::register($this);
         <div class="loader"><img src="<?=Url::base()?>/images/loader.gif" alt="Loader"></div>
 
         <!-- .aqua -->
-        <div class="aqua">
+        <div class="aqua aqua-usuarios-registros">
             <!-- .aqua-cont -->
             <div class="aqua-cont">
 
@@ -52,7 +52,7 @@ AppAsset::register($this);
             <!-- end - .aqua-cont -->
 
             <!-- .aqua-ver-resgistros -->
-            <!-- <span href="" class="aqua-ver-resgistros js-ver-resgistros">Ver registros</span> -->
+            <!-- <span class="aqua-ver-resgistros js-ver-resgistros">Ver registros</span> -->
 
         </div>
         <!-- end - .aqua -->
@@ -64,7 +64,7 @@ AppAsset::register($this);
             </div>
 
             <div class="home-footer-right">
-                <span href="" class="aqua-ver-resgistros js-ver-resgistros">Ver registros</span>
+                <button class="btn aqua-exportar js-btn-exportar ladda-button aqua-exportar-view" data-style="zoom-out"><span class="ladda-label">Exportar</span></button>
             </div>
         </div>
 
