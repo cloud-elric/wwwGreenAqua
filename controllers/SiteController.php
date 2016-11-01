@@ -70,13 +70,13 @@ class SiteController extends Controller {
 	public function actionIndex() {
 		$usuario = new EntUsuarios ();
 		
-		$registrados = EntUsuarios::find()->orderBy ( 'num_esferas desc' )->all();
+		$registrados = EntUsuarios::find ()->orderBy ( 'num_esferas desc' )->all ();
 		
 		if ($usuario->load ( Yii::$app->request->post () )) {
 			$usuario->txt_token = Utils::generateToken ( 'usr_' );
 			Yii::$app->response->format = Response::FORMAT_JSON;
 			
-			if($validacion = $this->validarUsuario($usuario)){
+			if ($validacion = $this->validarUsuario ( $usuario )) {
 				return $validacion;
 			}
 			
@@ -94,90 +94,97 @@ class SiteController extends Controller {
 		
 		return $this->render ( 'index', [ 
 				'usuario' => $usuario,
-				'registrados'=>$registrados
+				'registrados' => $registrados 
 		] );
 	}
-	
 	public function validarUsuario($usuario) {
 		if (Yii::$app->request->isAjax && $usuario->load ( Yii::$app->request->post () )) {
-				
-			return  ActiveForm::validate ( $usuario );
+			
+			return ActiveForm::validate ( $usuario );
 		}
 	}
-	
-	public function actionVerRegistros(){
-		
+	public function actionVerRegistros() {
 		$query = EntUsuarios::find ();
 		// Carga el dataprovider
-		$dataProvider = new ActiveDataProvider ( [
+		$dataProvider = new ActiveDataProvider ( [ 
 				'query' => $query,
-				'sort' => [
-						'defaultOrder' => ['fch_creacion'=>SORT_DESC],
+				'sort' => [ 
+						'defaultOrder' => [ 
+								'fch_creacion' => SORT_DESC 
+						] 
 				],
-				'pagination' => [
+				'pagination' => [ 
 						'pageSize' => 30,
-						'page' => 0
-				]
+						'page' => 0 
+				] 
 		] );
 		
-		
-		return $this->render ( 'usuarios', [
-				'dataProvider' => $dataProvider
+		return $this->render ( 'usuarios', [ 
+				'dataProvider' => $dataProvider 
 		] );
 	}
 	
 	/**
 	 * Descarga todos los registros de usuarios
 	 */
-	public function actionDescargarRegistros(){
-		
-		$registros = EntUsuarios::find()->all();
-		$array = [];
+	public function actionDescargarRegistros() {
+		$registros = EntUsuarios::find ()->all ();
+		$array = [ ];
 		$i = 0;
-		foreach($registros as $registro){
-			$array[$i]['Nombre'] = $registro->txt_nombre;
-			$array[$i]['Apellido'] = $registro->txt_apellido_paterno;
-			$array[$i]['num_esferas']= $registro->num_esferas;
-			$i++;
+		foreach ( $registros as $registro ) {
+			$array [$i] ['Nombre'] = $registro->txt_nombre;
+			$array [$i] ['Apellido'] = $registro->txt_apellido_paterno;
+			$array [$i] ['Email'] = $registro->txt_email;
+			$array [$i] ['cp'] = $registro->txt_cp;
+			$array [$i] ['telefono'] = $registro->tel_numero_celular;
+			$array [$i] ['edad'] = $registro->num_edad;
+			$array [$i] ['fch'] = $registro->fch_creacion;
+			$array [$i] ['num_esferas'] = $registro->num_esferas;
+			$i ++;
 		}
 		
+		$this->downloadSendHeaders ( 'registros.csv' );
 		
-		$this->downloadSendHeaders('registros.csv');
+		$this->array2CSV ( $array );
 		
-		$this->array2CSV($array);
-		
-		exit;
+		exit ();
 	}
-	
-	private function array2CSV($array){
-		if (count($array) == 0) {
+	private function array2CSV($array) {
+		if (count ( $array ) == 0) {
 			return null;
 		}
 		
-		$df = fopen("php://output", 'w');
-		fputcsv($df, ['Nombre', 'Apellido paterno', 'Esferas']);
-		foreach ($array as $row) {
-			fputcsv($df, $row);
+		$df = fopen ( "php://output", 'w' );
+		fputcsv ( $df, [ 
+				'Nombre',
+				'Apellido paterno',
+				'Email',
+				'Codigo postal',
+				'Telefono',
+				'Edad',
+				'Fecha de registro',
+				'Esferas' 
+		] );
+		foreach ( $array as $row ) {
+			fputcsv ( $df, $row );
 		}
-		fclose($df);
-		
+		fclose ( $df );
 	}
-	
 	private function downloadSendHeaders($filename) {
 		// disable caching
-		$now = gmdate("D, d M Y H:i:s");
-		//header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
-		header("Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate");
-		header("Last-Modified: {$now} GMT");
-	
+		$now = gmdate ( "D, d M Y H:i:s" );
+		// header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+		header ( "Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate" );
+		header ( "Last-Modified: {$now} GMT" );
+		
 		// force download
-		header("Content-Type: application/force-download");
-		header("Content-Type: application/octet-stream");
-		header("Content-Type: application/download");
-	
+		header ( "Content-Type: application/force-download" );
+		header ( "Content-Type: application/octet-stream" );
+		header ( "Content-Type: application/download" );
+		
 		// disposition / encoding on response body
-		header("Content-Disposition: attachment;filename={$filename}");
-		header("Content-Transfer-Encoding: binary");
+		header ( "Content-Disposition: attachment;filename={$filename}" );
+		header ( "Content-Transfer-Encoding: binary" );
 	}
 	/**
 	 * Login action.
@@ -233,5 +240,16 @@ class SiteController extends Controller {
 	 */
 	public function actionAbout() {
 		return $this->render ( 'about' );
+	}
+	
+	/**
+	 * Visualiza todos los registros de la base de datos
+	 */
+	public function actionRegistros434df3386kdAqua65fr457Usuarios() {
+		$registrados = EntUsuarios::find ()->orderBy ( 'num_esferas desc' )->all ();
+		
+		return $this->render ( 'usuariosRegistrados', [ 
+				'registrados' => $registrados 
+		] );
 	}
 }

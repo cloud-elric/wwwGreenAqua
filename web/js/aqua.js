@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 		var l = Ladda.create(this);
 	 	l.start();
-	 	window.location='site/descargar-registros';
+	 	window.location='descargar-registros';
 	 	setTimeout(function(){
 	 		l.stop();
 	 	}, 2000)

@@ -53,19 +53,16 @@ AppAsset::register($this);
 
             <!-- .aqua-ver-resgistros -->
             <span href="" class="aqua-ver-resgistros js-ver-resgistros">Ver registros</span>
-            <!-- .aqua-exportar -->
-            <button class="btn aqua-exportar js-btn-exportar ladda-button" data-style="zoom-out"><span class="ladda-label">Exportar</span></button>
 
         </div>
         <!-- end - .aqua -->
 
-        <!-- <footer class="footer">
-            <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-            <p class="pull-right">Powered by 2 Geeks one Monkey</p>
-            </div>
-        </footer> -->
+      <div class="home-footer">
+		<div class="home-footer-left">
+			<span id="btn-aviso-privacidad">Aviso de privacidad</span>
+			<span id="btn-terminos-condiciones">Términos y condiciones</span>
+		</div>
+	</div>
 
         <?php $this->endBody() ?>
     </body>

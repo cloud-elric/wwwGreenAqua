@@ -307,9 +307,9 @@ hr {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
-  height: 490px;
+  height: 660px;
   margin: 0 auto;
-  max-height: 90vh;
+  max-height: 95vh;
   max-width: 326px;
   overflow: hidden;
   padding: 23px 30px;
@@ -610,4 +610,16 @@ hr {
 
 .aqua.aqua-registros .aqua-cont .aqua-registros-body .aqua-registros-item:nth-child(even) {
   background-color: rgba(93, 103, 168, 0.1);
+}
+
+/******** FOOTER ARREGRARLO *****************************/
+.home-footer {
+    background-color: rgba(255, 223, 39, 0.4);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    justify-content: space-between;
+    padding: 8px 30px;
+    position: fixed;
+    right: 0;
 }
