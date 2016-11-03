@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\web\View;
+use app\models\Utils;
 
 $this->title = 'Registrarse';
 
@@ -35,8 +36,6 @@ $this->registerJsFile ( '@web/js/site.js', [
 			<?= $form->field($usuario, 'txt_cp',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "C. P.", 'maxlength'=>5])?>
 		
 			<?= $form->field($usuario, 'txt_email',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Email"])?>
-			
-			<?= $form->field($usuario, 'num_esferas',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Número de esferas"])?>
 
 			<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button animated', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
@@ -81,8 +80,7 @@ $this->registerJsFile ( '@web/js/site.js', [
                             <!-- .aqua-registros-item -->
 		<div class="aqua-registros-item">
 			<p><?=$registrado->txt_nombre.' '.$registrado->txt_apellido_paterno?></p>
-			<p><?=$registrado->num_esferas?></p>
-			<p><?=$registrado->fch_creacion?></p>
+			<p><?=Utils::changeFormatDate($registrado->fch_creacion)?></p>
 		</div>
 		<!-- end - .aqua-registros-item -->
                             <?php
