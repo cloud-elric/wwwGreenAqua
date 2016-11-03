@@ -37,25 +37,6 @@ $this->registerJsFile ( '@web/js/site.js', [
 		
 			<?= $form->field($usuario, 'txt_email',['options'=>['class'=>'animated']]) -> label(false) -> textInput(["placeholder" => "Email"])?>
 
-			<div class="col-xs-12 col-sm-12 input-field terminos-condiciones">
-				<ul class="list">
-					<li class="list__item">
-						<label class="label--checkbox">
-						
-							<div class="label--checkbox-row">
-								<div class="label--checkbox-row-col">
-									<input type="checkbox" id="checkbox" class="checkbox">
-								</div>
-								<div class="label--checkbox-row-col">
-									<span>Acepta Terminos y condiciones</span>
-								</div>
-							</div>
-						</label>
-					</li>
-				</ul>
-				<div class="aceptar-mask"></div>
-			</div>
-			
 			<?= Html::submitButton('<span class="ladda-label">Registrar</span>', ['id'=>'js-submit-form', 'class' => 'btn btn-primary js-btn-registrar ladda-button animated', 'name' => 'contact-button', 'data-style'=>'zoom-out'])?>
 			
 			<p id="message-error"></p>
