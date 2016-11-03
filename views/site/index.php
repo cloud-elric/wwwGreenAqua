@@ -44,7 +44,7 @@ $this->registerJsFile ( '@web/js/site.js', [
 						
 							<div class="label--checkbox-row">
 								<div class="label--checkbox-row-col">
-									<input type="checkbox" id="checkbox" class="checkbox">
+									<input type="checkbox" id="entusuarios-leido" class="checkbox" name="EntUsuarios[txt_email]">
 								</div>
 								<div class="label--checkbox-row-col">
 									<span>He leído aviso de privacidad</span>

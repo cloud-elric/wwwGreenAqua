@@ -101,7 +101,7 @@ $(document).ready(function(){
 	 */
 	$(".aceptar-terminos-condiciones-btn").on("click", function(){
 		$(".aceptar-mask").hide();
-		$("#checkbox").prop( "checked", true );
+		$("#entusuarios-leido").prop( "checked", true );
 		modalTerminosCondiciones.style.display = "none";
 
 	});
@@ -109,8 +109,8 @@ $(document).ready(function(){
 	/**
 	 * Click - Mostar terminos y condiciones
 	 */
-	$("#checkbox").click(function() {
-		if($("#checkbox").is(':checked')) {
+	$("#entusuarios-leido").click(function() {
+		if($("#entusuarios-leido").is(':checked')) {
 			// alert("Está activado");
 		} else {
 			$(".aceptar-mask").show();
