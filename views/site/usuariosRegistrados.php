@@ -25,4 +25,4 @@ $this->title = 'Usuarios registrados';
 <!-- end - .aqua-registros-body -->
 
 <!-- .aqua-exportar -->
-            <button class="btn aqua-exportar js-btn-exportar ladda-button aqua-exportar-view" data-style="zoom-out"><span class="ladda-label">Exportar</span></button>
+            <!-- <button class="btn aqua-exportar js-btn-exportar ladda-button aqua-exportar-view" data-style="zoom-out"><span class="ladda-label">Exportar</span></button> -->

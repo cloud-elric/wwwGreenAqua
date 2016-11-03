@@ -36,8 +36,10 @@ AppAsset::register($this);
 
                 <!-- .aqua-header -->
                 <div class="aqua-header">
-                    <img class="logo-aqua" src="<?=Url::base()?>/images/fiesta-americana.png" alt="Live Aqua">
-                    <img class="logo-fa" src="<?=Url::base()?>/images/live-aqua.png" alt="Fiesta Americana">
+
+                    <img class="logo-fa" src="<?=Url::base()?>/images/fiesta-americana.png" alt="Fiesta Americana">
+                    <img class="logo-aqua" src="<?=Url::base()?>/images/live-aqua.png" alt="Live Aqua">
+
                 </div>
                 <!-- end - .aqua-header -->
                 

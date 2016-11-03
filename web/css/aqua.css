@@ -616,7 +616,8 @@ hr {
 }
 
 .aqua.aqua-usuarios-registros .aqua-cont {
-  height: 86vh;
+  min-height: 200px;
+  max-height: 86vh;
   margin: 0 auto 8vh;
   max-width: 800px;
   padding: 23px 0 0;
@@ -624,14 +625,14 @@ hr {
 
 @media screen and (max-width: 768px) {
   .aqua.aqua-usuarios-registros .aqua-cont {
-    height: 81vh;
+    max-height: 81vh;
     margin: 0 auto 13vh;
   }
 }
 
 @media screen and (max-width: 450px) {
   .aqua.aqua-usuarios-registros .aqua-cont {
-    height: 78vh;
+    max-height: 78vh;
     margin: 0 auto 16vh;
   }
 }
@@ -639,7 +640,7 @@ hr {
 .aqua.aqua-usuarios-registros .aqua-cont .aqua-registros-body {
   height: 100%;
   overflow-x: auto;
-  padding: 10px 0 92px;
+  padding: 10px 0 48px;
 }
 
 .aqua.aqua-usuarios-registros .aqua-cont .aqua-registros-body .aqua-registros-item {
