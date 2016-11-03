@@ -1,4 +1,6 @@
 <?php 
+use app\models\Utils;
+
 $this->title = 'Usuarios registrados';
 ?>
 
@@ -13,7 +15,7 @@ $this->title = 'Usuarios registrados';
 		<p><?=$registrado->txt_nombre.' '.$registrado->txt_apellido_paterno?></p>
 		<p><?=$registrado->txt_email?></p>
 		<p><?=$registrado->tel_numero_celular?></p>
-		<p><?=$registrado->fch_creacion?></p>
+		<p><?=Utils::changeFormatDate($registrado->fch_creacion)?></p>
 	</div>
 	<!-- end - .aqua-registros-item -->
                             <?php

@@ -22,7 +22,7 @@ class EntUsuarios extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'ent_usuarios';
+        return 'ent_usuarios_2';
     }
 
     /**
@@ -31,7 +31,7 @@ class EntUsuarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','num_esferas','txt_email','num_edad', 'txt_cp'], 'required', 'message'=>'Campos requeridos'],
+            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','txt_email','num_edad', 'txt_cp'], 'required', 'message'=>'Campos requeridos'],
         	 ['txt_email', 'email', 'message'=>'Ingrese una dirección válida'],
             [['num_esferas'], 'integer', 'message'=>'Debe ser un valor númerico'],
         	[['tel_numero_celular'], 'string', 'max' => 10, 'message'=>'Maximo 10 digitos'],
