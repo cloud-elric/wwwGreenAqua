@@ -13,7 +13,7 @@ var closeAvisoPrivacidad = document.getElementById('modal-aviso-privacidad-close
 var btnAvisoPrivacidad = document.getElementById('btn-aviso-privacidad');
 
 // modal - Términos y condiciones
-var modalTerminosCondiciones = document.getElementById('modal-terminos-condiciones');
+var modalTerminosCondiciones = document.getElementById('modal-aviso-privacidad');
 var closeTerminosCondiciones = document.getElementById("modal-terminos-condiciones-close");
 var btnTerminosCondiciones = document.getElementById('btn-terminos-condiciones');
 

@@ -47,7 +47,7 @@ $this->registerJsFile ( '@web/js/site.js', [
 									<input type="checkbox" id="checkbox" class="checkbox">
 								</div>
 								<div class="label--checkbox-row-col">
-									<span>Acepta Terminos y condiciones</span>
+									<span>He leído aviso de privacidad</span>
 								</div>
 							</div>
 						</label>
