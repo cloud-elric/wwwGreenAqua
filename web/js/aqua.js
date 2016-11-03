@@ -12,6 +12,11 @@ var modalAvisoPrivacidad = document.getElementById('modal-aviso-privacidad');
 var closeAvisoPrivacidad = document.getElementById('modal-aviso-privacidad-close');
 var btnAvisoPrivacidad = document.getElementById('btn-aviso-privacidad');
 
+// modal - Términos y condiciones
+var modalTerminosCondiciones = document.getElementById('modal-aviso-privacidad');
+var closeTerminosCondiciones = document.getElementById("modal-terminos-condiciones-close");
+var btnTerminosCondiciones = document.getElementById('btn-terminos-condiciones');
+
 /**
  * Document Ready
  */
@@ -84,10 +89,44 @@ $(document).ready(function(){
 	});
 
 
+	/**
+	 * Click - Mostar terminos y condiciones
+	 */
+	$(".aceptar-mask").on("click", function(){
+		modalTerminosCondiciones.style.display = "flex";
+	});
+
+	/**
+	 * Click - Boton de Aceptar terminos y condiciones
+	 */
+	$(".aceptar-terminos-condiciones-btn").on("click", function(){
+		$(".aceptar-mask").hide();
+		$("#entusuarios-leido").prop( "checked", true );
+		modalTerminosCondiciones.style.display = "none";
+
+	});
+
+	/**
+	 * Click - Mostar terminos y condiciones
+	 */
+	$("#entusuarios-leido").click(function() {
+		if($("#entusuarios-leido").is(':checked')) {
+			// alert("Está activado");
+		} else {
+			$(".aceptar-mask").show();
+		}
+	});
+
 	// open
 	// Aviso de privacidad
 	$(btnAvisoPrivacidad).on("click", function(){
 		modalAvisoPrivacidad.style.display = "flex";
+	});
+
+	// open
+	// Términos y condiciones
+	$(btnTerminosCondiciones).on("click", function(){
+		modalTerminosCondiciones.style.display = "flex";
 	});
 
 
@@ -97,11 +136,25 @@ $(document).ready(function(){
 		modalAvisoPrivacidad.style.display = "none";
 	});
 
+
+	// close
+	// Términos y condiciones
+	$(closeTerminosCondiciones).on("click", function(){
+		modalTerminosCondiciones.style.display = "none";
+	});
+
+
 	// close it
 	window.onclick = function(event) {
 		// modal - Aviso de privacidad
 		if (event.target == modalAvisoPrivacidad) {
 			modalAvisoPrivacidad.style.display = "none";
+
+		}
+
+		// modal - Términos y condiciones
+		if (event.target == modalTerminosCondiciones) {
+			modalTerminosCondiciones.style.display = "none";
 		}
 	}
 

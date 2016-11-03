@@ -17,6 +17,8 @@ use Yii;
  */
 class EntUsuarios extends \yii\db\ActiveRecord
 {
+	
+	public $leido;
     /**
      * @inheritdoc
      */
@@ -31,8 +33,8 @@ class EntUsuarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['txt_token', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','txt_email','num_edad', 'txt_cp'], 'required', 'message'=>'Campos requeridos'],
-        	 ['txt_email', 'email', 'message'=>'Ingrese una dirección válida'],
+            [['txt_token','leido', 'txt_nombre', 'txt_apellido_paterno', 'tel_numero_celular','txt_email','num_edad', 'txt_cp'], 'required', 'message'=>'Campos requeridos'],
+        	//[['txt_email'], 'email', 'message'=>'Ingrese una dirección válida'],
             [['num_esferas'], 'integer', 'message'=>'Debe ser un valor númerico'],
         	[['tel_numero_celular'], 'string', 'max' => 10, 'message'=>'Maximo 10 digitos'],
         	[['tel_numero_celular'], 'string', 'min' => 10, 'message'=>'Mínimo 10 digitos'],

@@ -7,7 +7,7 @@ $('body').on(
 			if (form.find('.has-error').length) {
 				return false;
 			}
-
+			
 			var button = document.getElementById('js-submit-form');
 			var l = Ladda.create(button);
 			l.start();
@@ -79,6 +79,8 @@ $('#registro-form').on(
 		'afterValidate',
 		function(e) {
 
+			
+			
 			if ($('#registro-form').find('.has-error').length) {
 				
 				$("#message-error").addClass("aqua-body-error");
@@ -89,6 +91,12 @@ $('#registro-form').on(
 			}else{
 				$("#message-error").removeClass("aqua-body-error");
 				$("#message-error").text("");
+			}
+			
+			if(!$("#entusuarios-leido").is(':checked')){
+				$("#message-error").addClass("aqua-body-error");
+				
+				$("#message-error").text('Lea el aviso de privacidad');
 			}
 
 		});
